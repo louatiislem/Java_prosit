@@ -38,6 +38,64 @@ public class Main {
         System.out.println(a1);
         System.out.println(a2);
 
+        System.out.println("add");
+        System.out.println(z2.addAnimal(a1));
+        System.out.println(z2.addAnimal(a2));
+        System.out.println(z2.addAnimal(a1));
+        System.out.println(z2.addAnimal(a2));
+        System.out.println(z2.addAnimal(a1));
+        System.out.println(z2.addAnimal(a2));
+
+        System.out.println("Animaux dans le zoo :");
+        z2.afficheAnimals();
+        System.out.println("recherche");
+        System.out.println("Recherche animal : " + z2.searchAnimal(a2));
+
+        Animal a22=new Animal("oo","chien",2,true);
+        System.out.println("Recherche de animal identique : " + z2.searchAnimal(a22));
+
+        System.out.println("add version 2");
+        Animal lion = new Animal("Felidae", "Lion", 5, true);
+        Animal lion2 = new Animal("Felidae", "Lion", 5, true);
+        Zoo zoo=new Zoo(lion,"zoo","tunis",8);
+
+        zoo.addAnimal2(lion);
+        zoo.addAnimal2(lion2);
+
+        for (int i = 0; i < 30; i++) {
+            zoo.addAnimal2(new Animal("Test", "Animal"+i, i, true));
+        }
+
+        System.out.println("remove animal");
+        zoo.removeAnimal(lion);
+        Animal elephant = new Animal("Elephantidae", "Elephant", 10, false);
+        zoo.removeAnimal(elephant);
+
+        System.out.println("add avec final");
+        Zoo zoo2 = new Zoo("Zoo de Tunis", "Tunis");
+
+        for (int i = 1; i <= 30; i++) {
+            zoo2.addAnimal2(new Animal("Test", "Animal" + i, i, true));
+        }
+
+        System.out.println("zoo full");
+        Zoo zf = new Zoo("Belvedere", "Tunis", 2);
+
+        System.out.println(zf.isZooFull());
+        zf.addAnimalfull(new Animal("Lion", "Carnivore", 5, true));
+        zf.addAnimalfull(new Animal("Ours", "Omnivore", 7, true));
+        zf.addAnimalfull(new Animal("Girafe", "Herbivore", 4, true));
+        zf.addAnimalfull(new Animal("Lion", "Carnivore", 5, true));
+
+        System.out.println(zf.isZooFull());
+        System.out.println("compare");
+        Zoo plusGrand = Zoo.comparerZoo(z,z2);
+
+        System.out.println("Le zoo avec le plus d'animaux est : " + plusGrand.name);
 
     }
-}
+
+
+
+
+    }
