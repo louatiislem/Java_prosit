@@ -1,5 +1,8 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package Main;
+
+import entities.Animal;
+import entities.Zoo;
+
 public class Main {
     public static void main(String[] args) {
 // Création d'un animal
@@ -16,16 +19,16 @@ public class Main {
 //        myZoo.nbrCages = 20;
 
         Animal a=new Animal("hhh","lion",2,true);
-        System.out.println(a.name);
+        System.out.println(a.getName());
         Zoo z=new Zoo(a,"myzoo","tunis",5);
 
-        System.out.println("Animal: " + a.name + ", Famille: " + a.family);
-        System.out.println("Zoo: " + z.name + " situé à " + z.city);
+        System.out.println("Animal: " + a.getName() + ", Famille: " + a.getFamily());
+        System.out.println("Zoo: " + z.getName() + " situé à " + z.getCity());
 
         Animal a1=new Animal("jjj","chat",8,true);
         Animal a2=new Animal("oo","chien",2,true);
-        System.out.println("Animal: " + a1.name + ", Famille: " + a1.family);
-        System.out.println("Animal: " + a2.name + ", Famille: " + a2.family);
+        System.out.println("Animal: " + a1.getName() + ", Famille: " + a1.getFamily());
+        System.out.println("Animal: " + a2.getName() + ", Famille: " + a2.getFamily());
 
         Zoo z2=new Zoo(a,"myzoo2","tunis",50);
         z2.displayZoo();
@@ -91,7 +94,26 @@ public class Main {
         System.out.println("compare");
         Zoo plusGrand = Zoo.comparerZoo(z,z2);
 
-        System.out.println("Le zoo avec le plus d'animaux est : " + plusGrand.name);
+        System.out.println("Le zoo avec le plus d'animaux est : " + plusGrand.getName());
+//instruction 17
+        Zoo zff = new Zoo("Belvedere", "Tunis", 2);
+
+        Animal lion5 = new Animal("Felidae", "Lion", 5, true);
+        Animal ours = new Animal("Ursidae", "Ours", 7, true);
+        Animal girafe = new Animal("Giraffidae", "Girafe", 4, true);
+
+        zff.addAnimalen(lion5);
+        zff.addAnimalen(ours);
+        zff.addAnimalen(girafe);
+        //18
+        Animal tortue = new Animal("Testudines", "Toto", -3, false);
+        System.out.println(" âge négatif " + tortue);
+        Zoo zoo5 = new Zoo("", "Tunis", 5);
+
+        System.out.println("nom vide du zoo" + zoo5.getName());
+
+
+
 
     }
 
