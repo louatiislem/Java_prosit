@@ -1,7 +1,6 @@
 package Main;
 
-import entities.Animal;
-import entities.Zoo;
+import entities.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -111,6 +110,48 @@ public class Main {
         Zoo zoo5 = new Zoo("", "Tunis", 5);
 
         System.out.println("nom vide du zoo" + zoo5.getName());
+
+
+//21
+        //heritage
+        System.out.println("heritage");
+        Animal_aqua aqua = new Animal_aqua();
+        Animal_terr terr=new Animal_terr();
+        Dolphin dolphin=new Dolphin();
+        Penguin penguin=new Penguin();
+        System.out.println(aqua);
+        System.out.println(dolphin);
+        System.out.println(penguin);
+        System.out.println(terr);
+
+//22
+        System.out.println("avec protected");
+        Animal_aqua aqua2 = new Animal_aqua("abc","aqua",15,true,"mer");
+        System.out.println(aqua2);
+        Animal_terr terr2=new Animal_terr("abcde","terr",4,true,4);
+        System.out.println(terr2);
+        Dolphin dolphin2=new Dolphin("dolph","dol",2,true,"mer",12);
+        System.out.println(dolphin2);
+        Penguin pung1=new Penguin("puing","pui",5,true,"mer",14);
+        System.out.println(pung1);
+//23
+        System.out.println("instruction 23");
+        Animal_aqua aquatic = new Animal_aqua("FishFamily", "Nemo", 2, false, "Ocean");
+        Animal_terr terrestrial = new Animal_terr("Feline", "Lion", 5, true, 4);
+        Dolphin dolphin1 = new Dolphin("Cetacean", "Flipper", 8, true, "Sea", 25.6f);
+        Penguin penguin1 = new Penguin("Bird", "Pingu", 4, false, "Antarctica", 10.5f);
+
+        System.out.println(aquatic);
+        System.out.println(terrestrial);
+        System.out.println(dolphin1);
+        System.out.println(penguin1);
+//24
+        System.out.println("Swim");
+        aquatic.swim();
+        dolphin1.swim();
+        penguin1.swim();
+
+
 
 
 
