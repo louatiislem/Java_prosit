@@ -18,4 +18,9 @@ public class Penguin extends Animal_aqua{
     public String toString() {
         return super.toString()+" sSpeed=" + sSpeed;
     }
+    @Override
+    public void swim() {
+        System.out.println("This penguin is swimming quickly under the ice!");
+    }
+
 }

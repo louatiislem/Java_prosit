@@ -1,6 +1,6 @@
 package entities;
 
-public class Animal_aqua extends Animal{
+public abstract class  Animal_aqua extends Animal{
      protected String habitat;
      public Animal_aqua() {}
      public Animal_aqua(String family, String name, int age, boolean isMammal, String habitat) {
@@ -19,7 +19,17 @@ public class Animal_aqua extends Animal{
         return super.toString()+ "habitat=" + habitat ;
     }
     //methode swim
-    public void swim(){
-         System.out.println("This aquatic animal is swimming");
+    public abstract void swim();
+     //redefenir equals()
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Animal_aqua animal_aqua = (Animal_aqua) o;
+        return this.getName().equals(animal_aqua.getName()) &&
+                this.getAge() == animal_aqua.getAge() &&
+                this.getHabitat().equals(animal_aqua.getHabitat());
     }
 }

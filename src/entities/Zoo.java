@@ -1,5 +1,4 @@
 package entities;
-
 public class Zoo {
     private final int NBR_CAGES=25;
     private Animal[] animals = new Animal[NBR_CAGES];
@@ -7,9 +6,56 @@ public class Zoo {
     private String city;
     private int nbrCages;
     int nbrAnimals = 0;
+    Animal_aqua[] animal_aquas = new Animal_aqua[10];
 
+    //ajouter aquatic instruction 25
+    public void addAquaticAnimal(Animal_aqua aquatic) {
+        for (int i = 0; i < animal_aquas.length; i++) {
+            if (animal_aquas[i] == null) {
+                animal_aquas[i] = aquatic;
+                System.out.println(aquatic.getName() + "est ajouter avec succée au zoo");
+                return;
+            }
 
+        }
+        System.out.println(" le zoo est plein impossible d'ajouter ");
+    }
+    //instruction 27
+    public float maxPenguinSwimingDepth() {
+        float maxDepth = 0;
+        for (int i = 0; i < animal_aquas.length; i++) {
+            if (animal_aquas[i] != null && animal_aquas[i] instanceof Penguin) {
+                Penguin p = (Penguin) animal_aquas[i];
+                if (p.getsSpeed() > maxDepth) {
+                    maxDepth = p.getsSpeed();
+                }
+            }
+        }
+        return maxDepth;
+    }
+    //instruction 28
+    public void displayNumberOfAquaticsByType(){
+        int nbDolph=0;
+        int nbPenguin=0;
+        for(int i=0;i< animal_aquas.length;i++){
+            if(animal_aquas[i] != null){
+                nbDolph++;
+            } else if (animal_aquas[i] instanceof Dolphin ) {
+                nbPenguin++;
 
+            }
+        }
+        System.out.println("Nombre de dauphins: " + nbDolph);
+        System.out.println("Nombre de penguins: " + nbPenguin);
+    }
+//swim aqua
+    public void aquaSwim(){
+        for (int i = 0; i < animal_aquas.length; i++) {
+            if (animal_aquas[i] != null) {
+                animal_aquas[i].swim();
+            }
+        }
+    }
     public Zoo(Animal animals, String name, String city, int nbrCages) {
         this.name = name;
         this.city = city;
