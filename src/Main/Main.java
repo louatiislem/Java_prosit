@@ -182,16 +182,55 @@ public class Main {
         Animal_aqua p2 = new Penguin("Birds", "Pingo", 3, false, "Glace", 80);
 
         System.out.println(p1.equals(p2));
+        //32
+//        Animal lionex = new Animal("Felidae", "Lion", 5, true);
+//        Zoo zooex = new Zoo("Zoo de Tunis", "Tunis", 2);
+//
+//        try {
+//            zooex.addAnimalEx(lionex);
+//            zooex.addAnimalEx(new Animal("Canidae", "Chien", 3, true));
+//            zooex.addAnimalEx(new Animal("Ursidae", "Ours", 7, true));
+//        } catch (ZooFullException e) {
+//            System.out.println("Erreur : " + e.getMessage());
+//        }
+        //33
+        Zoo zooex2 = new Zoo("Zoo de Tunis", "Tunis", 3); // 3 cages pour tester
 
+        Animal a1ex = new Animal("Lion", "Carnivore", 5, true);
+        Animal a2ex = new Animal("Tigre", "Carnivore", -4, true);
+        Animal a3ex = new Animal("Girafe", "Herbivore", 7, true);
+        Animal a4ex = new Animal("Éléphant", "Herbivore", 10, true);
 
+//        try {
+//            zooex2.addAnimalEx(a1ex);
+//            zooex2.addAnimalEx(a2ex);
+//            zooex2.addAnimalEx(a3ex);
+//            zooex2.addAnimalEx(a4ex);
+//        } catch (ZooFullException e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        System.out.println("Nombre total d’animaux : " + zoo.getNbrAnimals());
+        //34
+        Animal[] animaux = {a1ex, a2ex, a3ex, a4ex};
 
-
-
-
-
-
-
+        for (Animal animal : animaux) {
+            try {
+                zooex2.addAnimalEx(animal);
+            } catch (InvalidAgeException e) {
+                System.out.println("Erreur : " + e.getMessage());
+            } catch (ZooFullException e) {
+                System.out.println("err" + e.getMessage());
+            } finally {
+                System.out.println("Nombre total d’animaux après tentative : " + zoo.getNbrAnimals());
+                System.out.println("...");
+            }
+        }
     }
+
+
+
+
 
 
 

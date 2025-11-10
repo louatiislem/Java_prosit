@@ -134,6 +134,35 @@ public class Zoo {
         return false;
 
     }
+//    public void addAnimalEx(Animal animal) throws  ZooFullException {
+//
+//            for (int i = 0; i < animals.length; i++) {
+//                if (animals[i] == null) {
+//                    animals[i] = animal;
+//                    System.out.println(animal.getName() + " ajouté avec succès au zoo " + name);
+//                    return;
+//                }
+//            }
+//            throw new ZooFullException("Le zoo " + name + " est plein, impossible d’ajouter " + animal.getName());
+//        }
+public void addAnimalEx(Animal animal) throws ZooFullException, InvalidAgeException {
+
+    if (animal.getAge() < 0) {
+        throw new InvalidAgeException("Âge d’animal invalide : l’âge ne peut pas être négatif. (" + animal.getName() + ")");
+    }
+
+    for (int i = 0; i < animals.length; i++) {
+        if (animals[i] == null) {
+            animals[i] = animal;
+            nbrAnimals++;
+            System.out.println(animal.getName() + " ajouté avec succès au zoo " + name);
+            return;
+        }
+    }
+
+    throw new ZooFullException("Le zoo " + name + " est plein, impossible d’ajouter " + animal.getName());
+}
+
 
     public void afficheAnimals() {
         for (int i = 0; i < animals.length; i++) {
